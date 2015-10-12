@@ -41,3 +41,5 @@ class QueueIsEmpty < StandardError
 end
 
 ```
+
+An upside of this methodology is that it's simple. We already know how to do some common operations on an array, so it's not very hard to imagine how we might implement a class that provides functionality to use an array specifically as a queue. However, this could get inefficient over time. What if we had to factor in any extra complexity, like whether or not certain items in the queue are weighted because of their urgency? What if, like the grocery store, we had multiple queues running at once in a single instance? We would need to then concern ourselves with a more robust data structure that can treat these concurrent "waiting lines" simultaneously, as threads.
