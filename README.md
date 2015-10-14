@@ -52,5 +52,11 @@ Concurrency is simply when one task starts before others finish, allowing us to 
 
 Here's [a simple example from an excellent blog post on threads](http://tinyurl.com/pc6jqf2) that you can run right in your terminal and observe.
 
+## Professional Implementations of Queuing
 
+Developers using queues in Rails have traditionally reached for back-end library support using [Resque](https://github.com/resque/resque) along with [Redis](http://redis.io/) or [Sidekiq](https://github.com/mperham/sidekiq). In the past, Rails developers usually had to write classes in their Rails apps that could interface with these solutions via a Rake task, because ActiveRecord/Rails didn't have any opinion or interface to deal with queuing. However, Rails 4.2 changed that with the addition of [ActiveJob](http://weblog.rubyonrails.org/2014/12/19/Rails-4-2-final/). ActiveJob acts as "an adapter layer on top of queueing systems like Resque, Delayed Job, Sidekiq, and more." The major advantage of this is that once you configure your application to use ActiveJob, you can swap out the back-end library or servicer for them without changes, because Rails simply handles the interface. It's still a fairly new feature, but you may see it in future projects if you work with Rails.
+
+## Share an example of queueing system that allows legacy code to run with a modern Rails client-side implementation
+
+(clinic only)
 
