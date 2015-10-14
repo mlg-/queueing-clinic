@@ -50,6 +50,7 @@ Ruby provides a native `Queue` class that is very similar to our array implement
 
 Concurrency is simply when one task starts before others finish, allowing us to finish work more efficiently. Imagine that we need to read and organize the contents of a file, line by line. We know how to do this using Ruby's `File` class and its methods, but what if that file is The Complete Works of Shakespeare? It's 124,000 lines long! If we had, say, four threads working on processing the file simultaneously, we could finish whatever we are trying to do with it much more quickly.
 
-Here's a simple example of using a queue that you can run right in your terminal:
+Here's [a simple example from an excellent blog post on threads](http://tinyurl.com/pc6jqf2) that you can run right in your terminal and observe.
+
 
 
