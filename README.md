@@ -42,4 +42,14 @@ end
 
 ```
 
-An upside of this methodology is that it's simple. We already know how to do some common operations on an array, so it's not very hard to imagine how we might implement a class that provides functionality to use an array specifically as a queue. However, this could get inefficient over time. What if we had to factor in any extra complexity, like whether or not certain items in the queue are weighted because of their urgency? What if, like the grocery store, we had multiple queues running at once in a single instance? We would need to then concern ourselves with a more robust data structure that can treat these concurrent "waiting lines" simultaneously, as threads.
+An upside of this methodology is that it's simple. We already know how to do some common operations on an array, so it's not very hard to imagine how we might implement a class to use an array specifically as a queue. However, this could get inefficient over time. What if we had to factor in any extra complexity, like whether or not certain items in the queue are weighted because of their urgency? What if, like the grocery store, we had multiple queues running at once in a single instance? What if we needed to scale our solution to hundreds or thousands of items in a given queue? We would need to then concern ourselves with a more robust data structure that can treat these concurrent "waiting lines" simultaneously, as threads.
+
+## The Queue in Ruby
+
+Ruby provides a native `Queue` class that is very similar to our array implementation above, but provides a mechanism for handling multiple threads concurrently. A `Thread` is also its own class in the Ruby Standard Library, and is Ruby's native solution to the need for concurrent programming solutions.
+
+Concurrency is simply when one task starts before others finish, allowing us to finish work more efficiently. Imagine that we need to read and organize the contents of a file, line by line. We know how to do this using Ruby's `File` class and its methods, but what if that file is The Complete Works of Shakespeare? It's 124,000 lines long! If we had, say, four threads working on processing the file simultaneously, we could finish whatever we are trying to do with it much more quickly.
+
+Here's a simple example of using a queue that you can run right in your terminal:
+
+
