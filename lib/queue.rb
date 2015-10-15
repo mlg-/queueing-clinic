@@ -5,7 +5,7 @@ class Queue
     @items = []
   end
 
-  def queue(new_item)
+  def enqueue(new_item)
     @items << new_item
   end
 
